@@ -24,14 +24,14 @@ export default function Answers({
           (answerState === "correct" || answerState === "wrong") &&
           isSelected
         ) {
-          cssClasses === answerState;
+          cssClasses = answerState;
         }
         return (
           <li key={answer} className="answer">
             <button
               onClick={() => onSelect(answer)}
               className={cssClasses}
-              //   disabled={answerState !== ""}
+              disabled={answerState !== ""}
             >
               {answer}
             </button>

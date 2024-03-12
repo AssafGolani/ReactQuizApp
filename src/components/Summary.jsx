@@ -37,6 +37,7 @@ export default function summary({ userAnswers }) {
       <ol>
         {userAnswers.map((answer, index) => {
           let cssClass = "user-answer";
+
           if (answer === null) {
             cssClass += " skipped";
           } else if (answer === QUESTIONS[index].answers[0]) {
@@ -48,7 +49,7 @@ export default function summary({ userAnswers }) {
             <li key={index}>
               <h3>{index + 1}</h3>
               <p className="question">{QUESTIONS[index].text}</p>
-              <p className="cssClass">{answer ?? "Skipped"}</p>
+              <p className={cssClass}>{answer ?? "Skipped"}</p>
             </li>
           );
         })}

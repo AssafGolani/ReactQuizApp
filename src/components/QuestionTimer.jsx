@@ -27,7 +27,7 @@ export default function QuestionTimer({ timeout, onTimeout, mode }) {
       id="question-time"
       max={timeout}
       value={remainingTime}
-      className="mode"
+      className={mode}
     />
   );
 }
